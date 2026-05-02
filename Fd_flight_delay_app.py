@@ -3,10 +3,14 @@ import streamlit as st
 import numpy as np
 import joblib
 
-# Load saved model and encoders
-loaded_model   = joblib.load("xgb_flight_delay_model.pkl")
-label_encoders = joblib.load("label_encoders.pkl")
-feature_names  = joblib.load("feature_names.pkl")
+import xgboost as xgb
+
+# Load model from JSON — version independent
+loaded_model_booster = xgb.Booster()
+loaded_model_booster.load_model("Fd_xgb_flight_delay_model.json")
+
+label_encoders = joblib.load("Fd_label_encoders.pkl")
+feature_names  = joblib.load("Fd_feature_names.pkl")
 
 def encode_value(col, value):
     le = label_encoders[col]
@@ -16,11 +20,11 @@ def encode_value(col, value):
         return 0
 
 def predict_delay(features):
-    features_array = np.array(features)
-    single_sample  = features_array.reshape(1, -1)
-    probability    = loaded_model.predict_proba(single_sample)[0][1]
+    features_array = np.array(features).reshape(1, -1)
+    dmatrix        = xgb.DMatrix(features_array, feature_names=feature_names)
+    probability    = loaded_model_booster.predict(dmatrix)[0]
     prediction     = 1 if probability >= 0.35 else 0
-    return prediction, probability
+    return prediction, float(probability)
 
 def main():
     st.title("✈️ Flight Arrival Delay Predictor")

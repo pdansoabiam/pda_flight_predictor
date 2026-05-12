@@ -1,6 +1,6 @@
 # ✈️ Flight Arrival Delay Predictor
 
-**BSAN 6070 — Introduction to Machine Learning | Spring 2026**
+**BSAN 6070 - Introduction to Machine Learning | Spring 2026**
 **Loyola Marymount University | College of Business Administration**
 
 > **Team:** Prince Danso-Abiam · Anthony Hanna · Alex Frieder
@@ -122,7 +122,7 @@ for filename in files_to_download:
 
 **Primary metric: ROC-AUC** — evaluates model discrimination across all thresholds and is robust to the 19% class imbalance in the dataset.
 
-**Overfitting check:** AUC gap (Train − Test) = 0.0037 → No overfitting ✅
+**Overfitting check:** AUC gap (Train − Test) = 0.0037 → No overfitting 
 
 **Tuning:** RandomizedSearchCV — 30 iterations, 3-fold stratified CV, T4 GPU acceleration
 
@@ -175,7 +175,7 @@ App opens at `http://localhost:8501`
 7. Click **Predict**
 
 The app returns:
-- ✅ **ON TIME** or ⚠️ **DELAYED** prediction
+-  **ON TIME** or  **DELAYED** prediction
 - Delay probability percentage
 - Decision threshold note (flights with ≥35% probability classified as delayed)
 

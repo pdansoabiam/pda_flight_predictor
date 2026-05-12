@@ -4,19 +4,19 @@
 **Loyola Marymount University | College of Business Administration**
 
 > **Team:** Prince Danso-Abiam · Anthony Hanna · Alex Frieder
-> **Prince's Role:** Feature Engineering, Validation & XGBoost/Gradient Boosting Lead
+> **Prince's Role:** Feature Engineering, Validation & XGBoost/Gradient Boosting and streamlit deployment Lead
 
 ---
 
-## 🎯 Predictive Question
+## Predictive Question
 
 > *Can we predict whether a U.S. domestic flight will arrive 15 minutes or more late using airline, route, date, schedule, and congestion-related information from 2018, 2019, 2021, and 2022?*
 
-**Target Variable:** `ArrDel15` — 1 = delayed ≥15 min, 0 = on time
+**Target Variable:** `ArrDel15` - 1 = delayed ≥15 min, 0 = on time
 
 ---
 
-## 📂 Repository Contents
+## Repository Contents
 
 | File | Description |
 |---|---|
@@ -29,7 +29,7 @@
 
 ---
 
-## 🗃️ Dataset
+## Dataset
 
 | Property | Detail |
 |---|---|
@@ -90,7 +90,7 @@ for filename in files_to_download:
 
 ---
 
-## 🔧 Feature Groups
+## Feature Groups
 
 | Group | Features | Count |
 |---|---|---|
@@ -106,7 +106,7 @@ for filename in files_to_download:
 
 ---
 
-## 🤖 Model
+## Model
 
 **Algorithm:** XGBoost (eXtreme Gradient Boosting)
 
@@ -128,7 +128,7 @@ for filename in files_to_download:
 
 ---
 
-## 🚀 Running the App Locally
+## Running the App Locally
 
 ### 1. Clone the repository
 
@@ -164,7 +164,7 @@ App opens at `http://localhost:8501`
 
 ---
 
-## 🖥️ App Usage
+## App Usage
 
 1. Select flight **year, quarter, month, day**, and **day of week**
 2. Choose **marketing airline**, **operating airline**, **origin** and **destination** airport
@@ -181,7 +181,7 @@ The app returns:
 
 ---
 
-## 📊 Key Findings (SHAP)
+## Key Findings (SHAP)
 
 1. **Time of day dominates** — `CRSDepTime` and `CRSArrTime` are the top predictors. Flights scheduled later in the day accumulate delays from earlier aircraft rotations.
 2. **Seasonality is second** — `Month` confirms strong seasonal patterns. Summer and holiday periods drive the highest delay rates.
@@ -191,7 +191,7 @@ The app returns:
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Model trained on 2018–2022 data — may not reflect post-2022 airline patterns
 - Extreme one-off events (e.g. Southwest December 2022 meltdown) are underweighted relative to their operational impact
@@ -201,7 +201,7 @@ The app returns:
 
 ---
 
-## 📚 References
+## References
 
 - Kılıç, M., & Sallan, J. M. (2023). Study of delay prediction in the US airport network. *Aerospace, 10*(4), 342. https://doi.org/10.3390/aerospace10040342
 - Hatıpoğlu, B., & Tosun, Ö. (2024). Predictive modeling of flight delays using machine learning. *Applied Sciences, 14*(13), 5472. https://doi.org/10.3390/app14135472
